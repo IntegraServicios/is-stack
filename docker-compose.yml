@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  development_db:
+    image: postgres:alpine3.19
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=S3cret
+      - POSTGRES_USER=test_user
+      - POSTGRES_DB=dev_db
+    networks:
+      - is_net
+networks:
+  is_net:
+    name: is_net
